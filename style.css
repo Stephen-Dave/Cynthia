@@ -1,0 +1,492 @@
+/* ================================
+   GENERAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #fff9f7;
+    color: #49383a;
+    overflow-x: hidden;
+}
+
+section {
+    position: relative;
+    min-height: 100vh;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ffe4e8 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, #fbe2d4 0%, transparent 30%),
+        #fff9f7;
+}
+
+.hero-content {
+    max-width: 750px;
+    padding: 30px;
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.small-intro,
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.75rem;
+    color: #b98289;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 500;
+    line-height: 0.9;
+    color: #593e42;
+}
+
+.hero h1 span {
+    font-size: 0.45em;
+}
+
+.hero-text {
+    max-width: 520px;
+    margin: 35px auto;
+    line-height: 1.9;
+    font-size: 1rem;
+    color: #765f62;
+}
+
+.primary-button,
+.reveal-button {
+    border: none;
+    background: #593e42;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+}
+
+.primary-button:hover,
+.reveal-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(89, 62, 66, 0.2);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #b98289;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 45px;
+    background: #d4a7ac;
+}
+
+
+/* ================================
+   BEAUTIFUL SECTION
+================================ */
+
+.beautiful {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: #f9e8e8;
+}
+
+.section-content {
+    width: min(700px, 90%);
+}
+
+.section h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 500;
+    line-height: 1;
+    color: #593e42;
+}
+
+.beautiful h2 em {
+    color: #a96870;
+}
+
+.large-text {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin: 35px 0 20px;
+}
+
+.beautiful p:not(.eyebrow):not(.large-text) {
+    line-height: 2;
+    color: #765f62;
+}
+
+.heart-divider {
+    font-size: 2rem;
+    margin-top: 40px;
+    color: #a96870;
+}
+
+
+/* ================================
+   LOVE CARDS
+================================ */
+
+.things {
+    padding: 120px 5%;
+    background: #fff9f7;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 70px;
+}
+
+.section-heading > p:last-child {
+    margin-top: 20px;
+    color: #806c6f;
+}
+
+.cards-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.love-card {
+    height: 260px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+}
+
+.love-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    backface-visibility: hidden;
+
+    border-radius: 20px;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.card-front {
+    background: #f9e8e8;
+}
+
+.card-front span {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.card-front h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.card-front p {
+    margin-top: 10px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #a96870;
+}
+
+.card-back {
+    background: #593e42;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.card-back p {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+
+/* ================================
+   SPECIAL BAR
+================================ */
+
+.special {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: #f5dedf;
+}
+
+.special-content {
+    width: min(750px, 90%);
+}
+
+.special-bar {
+    margin: 60px auto 35px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.bar-track {
+    height: 25px;
+    flex: 1;
+
+    background: rgba(255,255,255,0.7);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 50px;
+
+    background: #593e42;
+
+    transition: width 2s cubic-bezier(.17,.67,.25,1);
+}
+
+#specialPercent {
+    width: 50px;
+    font-size: 0.8rem;
+}
+
+.special-result {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+    margin-top: 35px;
+
+    min-height: 50px;
+}
+
+
+/* ================================
+   FINAL MESSAGE
+================================ */
+
+.final {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: #fff9f7;
+}
+
+.final-content {
+    width: min(750px, 90%);
+}
+
+.final-message {
+    margin-top: 50px;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        max-height 1s ease;
+}
+
+.final-message.visible {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 500px;
+}
+
+.final-message p {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.5rem, 3vw, 2.3rem);
+    line-height: 1.7;
+    color: #593e42;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    padding: 70px 20px;
+    text-align: center;
+
+    background: #593e42;
+    color: #f9e8e8;
+}
+
+footer p {
+    font-size: 0.8rem;
+}
+
+.signature {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.footer-note {
+    margin-top: 40px;
+    opacity: 0.7;
+}
+
+
+/* ================================
+   FLOATING HEARTS
+================================ */
+
+.heart {
+    position: fixed;
+    bottom: -20px;
+
+    font-size: 12px;
+    opacity: 0.5;
+
+    pointer-events: none;
+
+    animation: floatHeart linear forwards;
+
+    z-index: 10;
+}
+
+@keyframes floatHeart {
+
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.5;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+
+}
+
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 800px) {
+
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .love-card {
+        height: 230px;
+    }
+
+    .special-bar {
+        gap: 10px;
+    }
+
+    .section {
+        min-height: 100svh;
+    }
+
+}
